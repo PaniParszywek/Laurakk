@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<html>
+ <meta charset="utf-8">
+<body bgcolor="#8e6569">
+<head>
+
+<title>TOPOLOGIE SIECIOWE</title>
+<style>
+.center {
+  margin: auto;
+  width: 60%;
+ background-color:#2F3336;
+color:#ffffff;
+  padding: 10px;
+  height:8100px;
+ font-family: 'Open Sans', sans-serif;
+}
+a:link {color: PINK;}
+	a:visited {color: pink;}
+	a:active {color: purple;}
+</style>
+</head>
+<body>
+<div class="center">
+  <center><h1>TOPOLOGIE SIECIOWE</h1></center></br>
+<center><h2>TOPOLOGIA FIZYCZNA MAGISTRALI</h2></center>
+<p style="font-size:15px"><p style="text-align: justify"><b> Topologia fizyczna maigstrali</b> –  Topologia magistrali charakteryzuje się tym, że wszystkie urządzenia podłącza się do wspólnego medium transmisyjnego. Powszechnie stosowanym w tej topologii medium transmisyjnym był kabel koncentryczny. Jedną z wad tej topologii, była niewielką przepustowość (maksymalnie do 10 Mb/s).</p>
+<p style="font-size:15px"><p style="text-align: justify">Topologia ta stosowana była do budowy lokalnych sieci komputerowych. Celowo używam tutaj słowa "była", ponieważ nie jest już powszechnie stosowana. Poza niską przepustowością, charakteryzowała ją również duża podatność na awarię sieci. W momencie przerwania kabla koncentrycznego cała sieć przestawała działać. Niewątpliwą zaletą w zastosowaniu tej topologii był niewielki koszt jej wdrożenia, ponieważ nie trzeba było stosować setek metrów kabla ani żadnych urządzeń pośredniczących.</p>
+<center><img src ="img/fizmagi.jpg" alt="Topologia fizyczna magistrali" width="600px" height="250px"></br></center>
+
+<center><h2>Budowa</h2></center>
+<p style="font-size:15px"><p style="text-align: justify">Sieć o takiej topologii składa się z jednego kabla koncentrycznego (10Base-2, 10Base-5 lub 10Broad36). Poszczególne części sieci (takie jak hosty) są podłączane do nadajnik-odbiorników:
+<p>w przypadku sieci 10BASE2 – za pomocą specjalnych trójników zwanych także łącznikami T oraz łączy BNC,
+<p>w przypadku sieci 10BASE5 – za pomocą łącznika typu "wampir" z nadajniko-odbiornikiem lub łączem typu N.
+<p style="font-size:15px"><p style="text-align: justify">Na obu końcach magistrali powinien znaleźć się opornik (ang. terminator) o rezystancji równej impedancji falowej wybranego kabla, aby zapobiec odbiciu się impulsu i tym samym zajęciu całego dostępnego łącza. Maksymalna długość segmentu sieci w poszczególnych standardach wynosi:
+<p>10Base-2 – 185 m
+<p>10Base-5 – 500 m
+<p>10Broad36 – 1800 m
+<p style="font-size:15px"><p style="text-align: justify">Ze względu na problemy z doprowadzeniem pojedynczego kabla sieciowego praktycznie bezpośrednio do każdego komputera, sieć w topologii magistrali jest głównie stosowana w przypadku prostego ich rozmieszczenia – niewielkie biura lub sale wykładowe (komputerowe). Dużym problemem tej topologii jest minimalna odporność na awarie. Uszkodzenie magistrali w jednym miejscu praktycznie unieruchamia całą sieć, a znalezienie miejsca uszkodzenia jest trudne.
+
+<center><h2>Przesył danych</h2></center>
+<p style="font-size:15px"><p style="text-align: justify">Sieć w topologii magistrali pozwala na realizację wyłącznie jednej transmisji w danym momencie (wyjątkiem jest tutaj 10Broad36, który umożliwia podział kabla na kilka kanałów). Sygnał nadany przez jedną ze stacji jest odbierany przez wszystkie (co bez zastosowania dodatkowych zabezpieczeń umożliwia jego przechwycenie, które opiera się wyłącznie na przestawieniu karty sieciowej w tryb odbierania promiscuous), jednakże tylko stacja, do której pakiet został zaadresowany, interpretuje go. Dużym problemem w tego typu sieciach jest pojawianie się kolizji, czyli próby transmisji przez więcej niż jedną stację, w tym samym momencie. Aby ten problem rozwiązać stosuje się odpowiednie metody detekcji kolizji jak np. CSMA/CD. Maksymalna przepustowość łącza w trzech podanych wyżej standardach sieci Ethernet to 10 Mb/s.</p>
+<center><img src ="img/wizmag.png" alt="Wady i zalety topologi fizycznej magistrali"></br></center>
+</br>
+</br>
+
+
+<center><h2>TOPOLOGIA FIZYCZNA PIERŚCIENIA</H2></center>
+<p style="font-size:15px"><p style="text-align: justify">W topologii pierścienia każde urządzenie podłączone jest z dwoma sąsiadami, tworząc zamknięty krąg. Podobnie jak w przypadku topologii magistrali, przy budowie nie stosuję się dużej ilości okablowania oraz dodatkowych urządzeń. Ponadto można wykorzystać różne media transmisyjne, począwszy od kabla koncentrycznego, po skrętkę miedzianą, aż do kabli światłowodowych. Wadą tego rodzaju topologii jest fakt, iż przerwanie medium lub awaria jednego z komputerów powoduje przerwę w działaniu całej sieci. Aby temu zapobiec stosuje się tzw. podwójny pierścień, czyli podwaja się liczbę połączeń pomiędzy urządzeniami. Wówczas taką topologię nazywa się topologią podwójnego pierścienia.<p>
+<center><img src ="img/fizpier.jpg" alt="Topologia fizyczna pierścienia" width="600px" height="250px"></br></center>
+</br>
+<center><h2>TOPOLOGIA FIZYCZNA PODWÓJNEGO PIERŚCIENIA</h2></center>
+<p style="font-size:15px"><p style="text-align: justify">Z ang. dual-ring - składa się z dwóch pierścieni o wspólnym środku (dwa pierścienie nie są połączone ze sobą). Topologia podwójnego pierścienia jest tym samym co topologia pierścienia, z takim wyjątkiem, że drugi, zapasowy pierścień łączy te same urządzenia. Innymi słowy, w celu zapewnienia niezawodności i elastyczności w sieci każde urządzenie sieciowe jest częścią dwóch niezależnych topologii pierścienia. Dzięki funkcjom tolerancji na uszkodzenia i odtwarzania, pierścienie można przekonfigurować tak, żeby tworzyły jeden większy pierścień, a sieć mogła funkcjonować w przypadku uszkodzenia medium.
+Drugi pierścień może działać na dwa sposoby:
+<p>jako zapasowy, czyli w przypadku uszkodzenia pierwszego pierścienia przejmuje jego funkcję;
+<p>równocześnie z pierwszym pierścieniem podwajając przepustowość sieci, a w przypadku uszkodzenia przejąć jego funkcję.</br>
+<center><img src="img/2pierscien.jpeg" alt="Topologia fizyczna podwójnego pierscienia"></br></center>
+
+</br>
+<center><h2>TOPOLOGIA FIZYCZNA GWIAZDY</h2></center>
+<p style="font-size:15px"><p style="text-align: justify">Topologia gwiazdy (ang. star topology) – sposób połączenia urządzeń w sieci komputerowej charakteryzujący się tym, że kable sieciowe od wszystkich urządzeń końcowych zbiegają się w jednym wspólnym punkcie, zwanym punktem dostępu (ang. access point), w którym znajduje się koncentrator lub przełącznik sieciowy. W najprostszej odmianie sieć o topologii gwiazdy zawiera przełącznik (ang. switch) lub koncentrator (ang. hub) łączący pozostałe elementy sieci. Zwykle większość zasobów w takiej sieci znajduje się na serwerze dedykowanym, którego zadaniem jest przetwarzanie danych i zarządzanie siecią. Pozostałe elementy tej sieci nazywa się terminalami – korzystają one z zasobów zgromadzonych na serwerze, a same zazwyczaj mają niewielką moc obliczeniową.
+Zadaniem huba jest nie tylko łączyć elementy sieci, ale także rozsyłać pakiety oraz wykrywać kolizje tych pakietów w sieci. Takie funkcjonowanie powoduje często duże obciążenie sieci dlatego aktualnie najczęściej wykorzystuje się switche do łączenia elementów sieci, które ograniczają do minimum domeny kolizyjne.</p>
+<center><img src ="img/gwiazda.png" alt="Topologia fizyczna gwiazdy" width="650" height="400"></br></center>
+</br>
+<center><h2>TOPOLOGIA ROZGAŁĘZIONEJ GWIAZDY</h2></center>
+<p style="font-size:15px"><p style="text-align: justify">Topologia rozgałęzionej gwiazdy (ang. extended star topology) oparta jest na topologii gwiazdy. W tej topologii każde z urządzeń końcowych działa jako urządzenie centralne dla własnej topologii gwiazdy. Poszczególne gwiazdy połączone są ze sobą przy użyciu koncentratorów lub przełączników. Jest to topologia o charakterze hierarchicznym i może być konfigurowana w taki sposób, aby ruch pozostawał lokalny.
+Topologia ta stosowana jest głównie w przypadku rozbudowanych sieci lokalnych, gdy obszar, który ma być pokryty siecią, jest większy niż pozwala na to topologia gwiazdy, np. w wypadku dużych instytucji.</p>
+<center><img src="img/rozgwiaz.png" alt="TOPOLOGIA ROZGAŁĘZIONEJ GWIAZDY" width="650" height="400"></br></center>
+</br>
+<center><h2>TOPOLOGIA HIERARCHICZNA</h2></center>
+<p style="font-size:15px"><p style="text-align: justify">Topologia hierarchiczna, topologia drzewa, topologia rozproszonej gwiazdy (ang. hierarchical topology, tree topology, star-bus topology) – jest kombinacją topologii gwiazdy i magistrali, może być także postrzegana jako zbiór sieci w topologii gwiazdy połączonych magistralami w strukturę hierarchiczną (drzewiastą).
+Zasada jej budowy polega na dublowaniu poszczególnych magistral. Początkową pierwszą magistralę dołącza się do koncentratora, dzieląc ją na dwie lub więcej magistral przy użyciu przewodów koncentrycznych – w ten sposób powstają kolejne magistrale. Proces dzielenia można kontynuować, tworząc dodatkowe magistrale wychodzące z magistral odchodzących od pierwszej magistrali, co nadaje topologii cechy topologii gwiazdy. Jeśli jedną magistralę podzieli się na trzy magistrale i każdą z nich na kolejne trzy to w efekcie łącznie otrzyma się trzynaście magistral. Tak tworzone są kolejne poziomy drzewa, ale ich liczba jest ograniczona. Na końcu takiego drzewa zawsze znajdują się pojedyncze terminale (urządzenia).</p>
+<center><img src="img/hier.jpeg" alt="TOPOLOGIA HIERARCHICZNA" width="450" height="400"></br></center>
+</br>
+<center><h2>TOPOLOGIA SIATKI</h2></center>
+<p style="font-size:15px"><p style="text-align: justify">Topologia siatki (ang. mesh topology) – jedno z fizycznych topologii sieci komputerowych charakteryzująca się tym, iż jej węzły łączą się bezpośrednio, dynamicznie i niehierarchicznie z jak największą liczbą innych węzłów i współpracują ze sobą w celu efektywnego trasowania danych. Sieć w topologii mesh pozwala na dynamiczne samoorganizowanie się i samokonfigurowanie, co może zmniejszyć koszty instalacji. Topologia ta jest używana wtedy, gdy niezbędne jest zapewnienie wysokiej przepustowości, wysokiego bezpieczeństwa oraz wyeliminowanie kolizji sieciowych. Im bardziej te cechy są pożądane, tym sieć posiada więcej połączeń pomiędzy węzłami.
+Istnieją dwa typy topologii siatki:
+<p><b>pełna siatka</b> (ang. full mesh) – każdy węzeł sieci ma fizyczne połączenie z każdym innym węzłem w danej sieci,
+<p><b>siatka nie-pełna</b> (ang. partial mesh) – węzły mają różną liczbę połączeń sieciowych do innych węzłów.
+<p style="font-size:15px"><p style="text-align: justify">Internet oparty jest na topologii siatki częściowej – możliwe jest dotarcie bardzo dużą liczbą różnych ścieżek z jednego węzła do drugiego. W praktyce stworzenie dużej sieci opartej na pełnej siatce jest niewykonalne, gdyż liczba połączeń rośnie kwadratowo wraz z dołączaniem kolejnych węzłów sieci.
+Ze względu na zastosowane medium transmisyjne, sieci mesh można podzielić na przewodowe i bezprzewodowe. W przypadku sieci bezprzewodowych wyróżnić można trzy generacje:
+<p><b>siatka współdzielona z pojedynczym kanałem transmisji</b> (ang. single radio shared mesh) – połączenia tworzące siatkę (ang. backhaul) i połączenia urządzeń końcowych współdzielą jedno pasmo transmisyjne,
+<p><b>siatka współdzielona z podwójnym kanałem transmisji</b> (ang. dual radio shared mesh) – połączenia tworzące siatkę współdzielą jedno pasmo transmisyjne, a połączenia urządzeń końcowych korzystają z drugiego pasma,
+<p><b>siatka przełączana, siatka komutowana </b>(ang. switched mesh) – każde połączenie tworzące siatkę korzysta z oddzielnego kanału transmisyjnego, a połączenia urządzeń końcowych korzystają z innego pasma.
+<p style="font-size:15px"><p style="text-align: justify">Pierwsze dwie generacje siatki bezprzewodowej mocno ograniczają przepustowość całej sieci i wprowadzają znaczne opóźnienia w transmisji danych, natomiast trzecia generacja siatki charakteryzuje się znacznie większą przepustowością i niskimi opóźnieniami, dlatego przeznaczona jest do wymagających zastosowań takich jak przesyłanie głosu lub wideo.</p>
+<center><img src ="img/siatka.jpg" alt ="TOPOLOGIA SIATKI"></br></center>
+</br>
+</br>
+<center><h1>TOPOLOGIE LOGICZNE</h1></center>
+<h2>TOPOLOGIA LOGICZNA PUNKT-PUNKT</h2>
+W topologii typu punkt-punkt dane przesyłane są tylko od jednego urządzenia do drugiego. Urządzenia te mogą być podłączone ze sobą bezpośrednio, np. komputer z przełącznikiem, jak również pośrednio, na duże odległości, z wykorzystaniem urządzeń pośredniczących, czego przykładem może być połączenie ze sobą dwóch ruterów oddalonych od siebie o wiele kilometrów.
+Topologia punkt-punkt
+Zarówno w jednym jak i drugim przypadku mówić możemy o logicznym połączeniu punkt-punkt. Jest to logiczna topologia często stosowana w sieciach lokalnych, w których wykorzystuje się fizyczną topologie gwiazdy.
+</p>
+<center><img src="/img/punkt.jpeg" alt ="TOPOLOGIA LOGICZNA PUNKT- PUNKT" width="600px" height="250px"></br></center>
+
+<center><h2>TOPOLOGIA ROZGŁASZANIA</h2></center>
+<p>Topologia wielodostępowa (czasami zwana również logiczną topologią rozgłaszania lub magistrali) umożliwia komunikację urządzeń w sieci poprzez jedno fizyczne medium transmisyjne. Najczęściej stosowana była wspólnie z fizyczną topologią magistrali oraz gwiazdy na wczesnym etapie jej rozwoju, kiedy to stosowano jeszcze koncentratory jako punkty dostępowe do sieci.
+Topologia wielodostępowa
+Każde urządzenie w tej topologii widzi dane przesyłane przez sieć ponieważ są one przesyłane do wszystkich urządzeń, ale tylko konkretne urządzenie, do którego dane są adresowane je interpretuje. W związku z tym, że urządzenia w sieci korzystają ze wspólnego medium, konieczne było wprowadzenie mechanizmów kontrolujących dostęp do tego medium, te mechanizmy to: CSMA/CD, CSMA/CA oraz Token-Passing.</p>
+<p>Topologia rozgłaszania polega na tym, że host wysyła dane do wszystkich innych hostów podłączonych do medium (zob. protokół CSMA). Kolejność korzystania z medium według reguły „kto pierwszy wyśle, pierwszy zostanie obsłużony” (ang. first come, first serve). Przykładem są tutaj sieci Ethernet:
+<p>IEEE 802.3 – 10 Mb Ethernet
+<p>IEEE 802.3u – 100 Mb Ethernet
+<p>IEEE 802.3x – Full Duplex Ethernet
+<p>IEEE 802.3z – 1 Gb Ethernet</p>
+<center><img src="img/rozglaszania.jpg" alt="TOPOLOGIA ROZGŁASZANIA" width="600px" height="250px"></br></center>
+
+<center><h2>TOPOLOGIA PRZEKAZYWANIA TOKENA(ŻETONU)</h2></center>
+<p>W topologii przekazywania żetonu, dane przekazywane są kolejno do urządzeń połączonych w sieć. Urządzenie, które otrzyma porcję danych, analizuje czy są one kierowane do niego czy też nie. Jeśli dane nie są do niego adresowane, przekazuje je dalej, do sąsiedniego urządzenia. W taki sposób, dane przesyłane są przez wszystkie urządzenia występujące pomiędzy urządzeniem źródłowym, a docelowym.</p>
+<p>Topologia przekazywania tokena (żetonu) – polega na kontrolowaniu dostępu do sieci poprzez przekazywanie elektronicznego tokena. Host, który w danym momencie posiada token, może skorzystać z medium. W przypadku, gdy nie ma już zadań do wykonania przekazuje token kolejnemu hostowi i cykl się powtarza :
+<p>IEEE 802.5 – Token ring
+<p>IEEE 802.6 – sieci metropolitalne/miejskie (MAN)
+<p>FDDI</p>
+<center><img src="img/przek.jpg" alt="TOPOLOGIA PRZEKAZYWANIA TOKENA(ŻETONU)" width="600px" height="250px"></br></center>
+</br>
+</br>
+<center><h1>METODY DOSTĘPU DO ŁĄCZA</h1></center>
+<p>Metoda <b>CSMA/CD</b> czyli metoda z wykrywaniem kolizji, polega na nasłuchiwaniu stanu łącza. Jeśli urządzenie, które chce rozpocząć transmisje, wykryje, że łącze jest wolne to taką transmisję rozpoczyna. Jeśli w czasie przesyłania danych wykryje, że inne urządzenie w sieci również wysyła swoje dane, to następuje przerwa w transmisji. Po pewnym, określonym czasie, następuje ponowna próba transmisji. Mechanizm ten stosowany jest w starszych odmianach sieci Ethernet.
+
+<p>Metoda <b>CSMA/CA</b> czyli metoda z unikaniem kolizji, również polega na nasłuchiwaniu stanu łącza, z tym, że urządzenie, które wykryje, ze nośnik, czyli medium transmisyjne jest wolne, zanim rozpocznie transmisje, wysyła najpierw informację o zamiarze jej rozpoczęcia. Mechanizm ten spotykany jest w sieciach bezprzewodowych.
+
+<p>Metoda <b>Token-Passing</b> polega na przesyłaniu od urządzenia do urządzenie specjalnej porcji danych zwanej żetonem lub tokenem, którego posiadanie zezwala na rozpoczęcie transmisji.
+</p>
+
+<a href="https://pl.wikipedia.org/wiki/Topologia_sieci_komputerowej#:~:text=Topologia%20sieci%20komputerowej%20–%20model%20układu,sieci%20komputerowej.&text=Topologia%20fizyczna%20opisuje%20sposoby%20fizycznej,jej%20układu%20przewodów%2C%20medium%20transmisyjnych.">Źródła</a>
+</br><a href="https://pasja-informatyki.pl/sieci-komputerowe/topologie-sieci/">Źródła</a>
+</div>
+</body>
+</html>

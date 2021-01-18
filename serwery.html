@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<html>
+ <meta charset="utf-8">
+<body bgcolor="#8e6569">
+<head>
+<title>SERWERY</title>
+<style>
+.center {
+  margin: auto;
+  width: 60%;
+ background-color:#2F3336;
+color:#ffffff;
+  padding: 10px;
+  height:3100px;
+ font-family: 'Open Sans', sans-serif;
+}
+a:link {color: PINK;}
+	a:visited {color: pink;}
+	a:active {color: purple;}
+</style>
+</head>
+<body>
+<div class="center">
+ <center><h1>SERWERY</h1></center>
+<h3>SERWER PLIKÓW</H3>
+<p style="font-size:17px"><p style="text-align: justify">
+<b>Serwer plików</b> to najprostsza i najczęściej wykorzystywana rola serwera. Serwer plików, jak sama nazwa sugeruje, to miejsce, gdzie przechowywane są pliki, do których ma mieć dostęp więcej niż jedna osoba.
+Dostęp do plików powinien być różnicowany poprzez nadawanie użytkownikom uprawnień do poszczególnych folderów i plików. Oczywiście możliwy jest przypadek, często spotykany w najmniejszych firmach, gdy wszyscy mają nieograniczony dostęp do wszystkiego.
+Zależnie od potrzeb i zastosowanych w związku z tym rozwiązań pliki mogą być dostępne tylko w sieci lokalnej albo również poza – w Internecie lub intranecie.
+Format i zawartość i plików jest dowolny. Mogą to być np. dokumenty, pliki graficzne, zdjęcia, filmy.
+Komputer pełniący rolę serwera plików powinien mieć dużo miejsca na dyskach a dyski powinny być szybkie.
+Warto zainwestować w zabezpieczenia na wypadek awarii dysków oraz rozwiązanie do archiwizacji i tworzenia kopii zapasowych.
+Dla zapewnienia szybkiego przesyłania plików istotna jest przepustowość połączenia sieciowego, przez które wszystkie pliki muszą być przesłane. Chodzi o to, aby łącze pomiędzy serwerem a switchem nie było wąskim gardłem – powinno mieć przepustowość kilka razy większą od przepustowości łącza pomiędzy komputerami - stacjami roboczymi a switchem.
+W przypadku serwera plików na plan dalszy schodzi wydajność procesora czy ilość pamięci.</br>
+
+
+ 
+</br><h3>SERWER BAZODANOWY</H3>
+<p style="font-size:17px"><p style="text-align: justify">Z serwerem plików „spokrewniony” jest serwer bazy danych. Wspólna funkcja to udostępnianie informacji wszystkim użytkownikom sieci. Różnica polega na tym, że w przypadku serwera plików informacje są przechowywane w postaci ogromnej ilości plików, zapisanych w uporządkowany sposób w wielopoziomowym systemie folderów.
+Na bazę danych można spojrzeć jak na jeden wielki plik, do którego dostęp kontroluje specjalne oprogramowanie. Oprogramowanie to odpowiada na zapytania pochodzące od użytkowników, generowane przez programy, w których użytkownicy pracują. Jako przykład można podać tu program finansowo-księgowy – wszystkie dane przechowywane są w bazie danych na serwerze bazodanowym. Użytkownicy uruchamiają na swoich komputerach programy, które sięgają po potrzebne informacje do bazy danych, wysyłając do serwera zapytania o konkretne zestawy danych, które serwer bazodanowy następnie wyszukuje i odsyła. Analogicznie w przypadku konieczności zmiany danych w bazie – nie jest wysyłany cały plik (jak ma to miejsce w serwerze plików) a jedynie odpowiednie polecenie do serwera bazy danych wraz z danymi do zapisania.
+W przypadku serwera bazy danych rośnie znaczenie procesora, który ma o wiele więcej pracy niż w przypadku serwera plików. Połączenie sieciowe nie jest już tak istotne, bo z reguły ilość przesyłanych danych jest mniejsza (ale nie zawsze).
+Funkcje serwera bazy danych i serwera plików można z powodzeniem łączyć w jednym komputerze-serwerze. Należy przestrzegać zasady, aby baza danych była przechowywana na oddzielnym dysku (logicznym, fizycznym, wolumenie).</br>
+
+ 
+</br><h3>SERWER TERMINALOWY</H3>
+<p style="font-size:17px"><p style="text-align: justify">Gdy pracujesz na komputerze w tradycyjny sposób, np. piszesz tekst za pomocą MS-Word, wszystko dzieje się na Twoim komputerze. Najpierw program jest ładowany z dysku do pamięci. Potem program wczytuje z dysku dokument. Następnie pracujesz nad tekstem, aby na końcu zapisać go na dysku.Praca terminalowa polega na tym, że program nie jest wczytywany do pamięci komputera, przy którym pracujesz a do pamięci serwera terminalowego. Program działa w pamięci i procesorze serwera a przez sieć przesyłane są ekrany, które masz zobaczyć, kody klawiszy, które naciskasz, informacje o ruchach myszką oraz dźwiękach, jakie należy odzwierciedlić na Twoim komputerze. W efekcie trudno nawet jest zauważyć różnicę pomiędzy pracą tradycyjną a terminalową. Konfiguracja serwera terminalowego musi spełniać nie tylko wymagania narzucane przez program, która będzie używany. 
+Z uwaga na fakt, że program ten będzie używany przez wielu użytkowników, serwer musi mieć odpowiednio dużą wydajność – szybkie wielordzeniowe procesory oraz duża ilość pamięci są w tym przypadku szczególnie wskazane.
+ Zaleca się, aby funkcja serwera terminalowego była jedyną pełnioną przez serwer, chociaż w praktyce często łączy się ją z rolą serwera plików.
+</br><p> Praca terminalowa ma sporo zalet. Kilka podstawowych to:
+<p> - Możliwość korzystania z programu niezależnie od miejsca (zarówno w sieci lokalnej w biurze jak i będąc gdziekolwiek przez Internet)
+<p> - Łatwość zarządzania i utrzymania programu – nie ma potrzeby instalacji, aktualizacji programu na wszystkich komputerach, na których jest używany, wystarczy zrobić to raz na serwerze
+<p> - Niezależność od konfiguracji komputerów klienckich – klient usług terminalowych ma niewielkie wymagania sprzętowe. Wystarczy, że serwer spełnia wymagania stawiane przez program.
+<p> - Większe bezpieczeństwo danych – ponieważ pliki przechowywane są na serwerze, nie ma ryzyka ich utraty np. w wyniku kradzieży laptopa, z którym podróżujesz.</br>
+
+
+ 
+</br><h3>SERWER POCZTOWY</H3>
+<p style="font-size:17px"><p style="text-align: justify">W obecnych czasach, gdy poczta elektroniczna staje się podstawowym sposobem komunikacji, coraz więcej firm decyduje się na uruchomienie własnego serwera pocztowego. Własny serwer pocztowy to uniezależnienie się od zewnętrznych providerów, większa elastyczność i kontrola nad pracą systemu pocztowego.Serwer pocztowy jest stale podłączony do Internetu – odbiera maile przychodzące ze świata oraz kieruje je na skrzynki pocztowe odbiorców. I odwrotnie - maile wysłane przez użytkowników trafiają najpierw do serwera, który wysyła je dalej w świat.Oprogramowanie serwera pocztowego często ma dodatkowo wiele innych ciekawych funkcji:
+Kalendarz z umawianiem spotkań, Biblioteka dokumentów ( to forma udostępniania plików poza siecią lokalną), Praca grupowa.</br>
+
+ 
+</br><h3>SERWER WYDRUKU</H3>
+<p style="font-size:17px"><p style="text-align: justify"><p style="font-size:17px"><p style="text-align: justify">Serwery wydruku (tzw print-serwery) bardzo ułatwiają życie oraz obniżają koszty, pozwalając na podłączenie drukarki bezpośrednio do sieci, dzięki czemu jedna drukarka jest dostępna dla wszystkich użytkowników sieci.Serwerem wydruku może być zarówno komputer-serwer, komputer-stacja robocza z podłączoną i udostępnioną drukarką jak i specjalne urządzenie.Ostatnia opcja jest najbardziej godna polecenia. Jej największe zalety to:
+<p>Niezawodność – serwer wydruku jako stosunkowo proste urządzenie psuje się naprawdę rzadko
+<p>Dostępność drukarki 24 godziny/7 dni w tygodniu – nie ogranicza nas np. to, czy komputer, który udostępnia drukarkę jest włączony czy nie
+<p>Dowolność ulokowania serwera z drukarką - dostępne są również bezprzewodowe print-serwery. Print-serwery są często wbudowane w drukarki – to najwygodniejsze rozwiązanie.
+<p>Najwięcej korzyści uzyskuje się poprzez połączenie funkcjonalności serwera wydruków udostępnianej przez oprogramowanie serwera z print-serwerami sprzętowymi.</br>
+
+ 
+</br><h3>FIREWALL/IDS/IPD</H3>
+<p style="font-size:17px"><p style="text-align: justify">Firewall jest niezbędny – tak, jak w domu niezbędne są solidne drzwi antywłamaniowe.  Ale nie wystarczający! Przyznasz, że chciałoby się dowiedzieć  jak wielu włamywaczy próbowało się dostać, jakimi metodami i narzędziami się posługiwali, jak blisko byli od sukcesu, gdzie są słabe punkty Twoich zabezpieczeń. A wręcz idealnie byłoby móc złapać złoczyńcę na gorącym uczynku.
+<p style="font-size:17px"><p style="text-align: justify">Do tego służą systemy wykrywania włamań do sieci (IDS) oraz zapobiegania włamaniom (IPS), których praca  polega na analizie strumienia danych przesyłanych z Internetu i
+wyszukiwaniu w nim cech charakterystycznych dla znanych już metod włamań i ataków, 
+wyszukiwaniu wszelkich anomalii,
+rejestrowaniu wszystkich nietypowych zdarzeń,
+alarmowaniu o zagrożeniach,
+ Ponieważ praca systemów IDS/IPS polega na analizie ruchu na łączu z Internetem, często integruje się je z systemami antywirusowymi i antyspamowymi oraz analizy i filtrowania treści jak i innymi, których działanie opiera się na tej samej zasadzie.
+<center><p><b>!FIREWALLA/IDS/IPS POTRZEBUJEMY ZAWSZE GDY JESTEŚMY PODŁĄCZENI DO INTERNETU!</b></center>
+
+
+ 
+</br><h3>SERWER WWW/FTP</H3>
+<p style="font-size:17px"><p style="text-align: justify">Serwer www przechowuje witryny internetowe oraz wysyła na żądania strony www, które mają być wyświetlone w przeglądarce internetowej użytkownika. W przypadku, gdy witryna www ma być dostępna tylko dla pracowników firmy mówimy o intranecie. Tak więc serwer www może przechowywać zarówno witryny, które mają być dostępne dla wszystkich w Internecie jak również tylko dla ograniczonej grupy osób.
+
+ 
+<h3>SERWER USŁUG KATALOGOWYCH</H3>
+<p style="font-size:17px"><p style="text-align: justify">Zadaniem serwera usług katalogowych (active directory) jest zarządzanie uprawnieniami użytkowników. Usługa katalogowa Active Directory (ang. Active Directory Domain Services) udostępnia rozproszoną bazę danych, która przechowuje i zarządza informacjami o zasobach sieci oraz danymi specyficznymi dla aplikacji potrafiących z tej bazy korzystać.
+Usługa Active Directory przechowuje informacje o obiektach znajdujących się w sieci oraz umożliwia administratorom i użytkownikom łatwe znajdowanie tych informacji i korzystanie z nich. Usługa Active Directory używa magazynu danych o określonej strukturze jako podstawy dla logicznej i hierarchicznej organizacji informacji katalogowych. Ten magazyn danych, nazywany również katalogiem, zawiera informacje o obiektach usługi Active Directory. Do tych obiektów zazwyczaj należą zasoby udostępnione, takie jak serwery, woluminy, drukarki oraz konta użytkowników i komputerów w sieci. Usługą Active Directory są zintegrowane zabezpieczenia polegające na uwierzytelnianiu logowania i kontroli dostępu do obiektów w katalogu. Po jednokrotnym zalogowaniu się do sieci administratorzy mogą zarządzać danymi katalogowymi i ich organizacja w sieci, a autoryzowani użytkownicy sieci maja dostęp do zasobów znajdujących się w dowolnym miejscu sieci. Administracja oparta na zasadach ułatwia zarządzanie nawet najbardziej złożoną siecią.
+<p>Usługi katalogowe pełnią następujące funkcje:
+<p> - umożliwia scentralizowane zarządzanie zasobami naszej sieci (serwery, drukarki czy udostępnione pliki) a także przypisywanie uprawnień do tychże zasobów,
+<p> - możliwość administracji nie tylko w obrębie sieci LAN ale także na roległych obszarach geograficznych na których mogą być rozproszone nasze komputery, serwery,
+<p> - dzięki zapewnieniu hierarchicznej struktury bazy AD zyskujemy większe bezpieczeństwo przechowywania zasobów, którymi zarządzamy.
+
+
+</body>
+
+
+</div>
+
+</body>
+</html>

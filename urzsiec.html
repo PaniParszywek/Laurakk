@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<html>
+ <meta charset="utf-8">
+<body bgcolor="#8e6569">
+<head>
+<title>URZĄDZENIA SIECIOWE</title>
+<style>
+.center {
+  margin: auto;
+  width: 60%;
+ background-color:#2F3336;
+color:#ffffff;
+  padding: 10px;
+  height:5700px;
+ font-family: 'Open Sans', sans-serif;
+}
+a:link {color: PINK;}
+	a:visited {color: pink;}
+	a:active {color: purple;}
+</style>
+</head>
+<body>
+<div class="center">
+ <center><h1>URZĄDZENIA SIECIOWE</h1></center>
+<h3>Klasyfikacja urządzeń sieciowych</h3>
+<p style="font-size:17px"><p style="text-align: justify"><b>CPE</b> (ang. Customer Premises Equipment)- urządzenia znajdujące się w placówkach abonenta zwane są wyposażeniem CPE (ang. Customer Premises Equipment)- urządzenia końcowe użytkownika. Abonent jest właścicielem wyposażenia CPE lub dzierżawi je od dostawcy usług. Wyposażenie CPE jest połączone z najbliższą centralą dostawcy za pomocą kabla miedzianego lub światłowodu. Często kabel ten nazywany jest pętlą lokalną lub "ostatnią milą". Połączenie dodzwaniane jest łączone lokalnie z innymi pętlami lokalnymi lub nielokalnie poprzez łącze dalekosiężne z główną centralą. Dalej po drodze do miejsca docelowego przechodzi do centrali sekcji, a następnie do centrali regionalnej lub międzynarodowej. Aby możliwe było przesyłanie danych po pętli lokalnej, potrzebne jest urządzenie, np. modem, które przygotuje je do transmisji.
+<p style="font-size:17px"><p style="text-align: justify"><b>DCE</b> (ang. Data Circuit-Terminating Equipment lub Data Communications Equipment)- urządzenia komunikacyjne (np. modemy), które przesyłają dane przez pętlę lokalną. DCE stanowi interfejs dla urządzeń DTE w sieciach WAN.
+<p style="font-size:17px"><p style="text-align: justify"><b>DTE</b> (ang. Data Terminal Equipment)- urządzenia klienta, które przekazują dane do urządzeń DCE. Urządzenie DCE stanowi przede wszystkim interfejs dla urządzenia DTE, do łącza komunikacyjnego sieci WAN. W ramach interfejsu DTE/DCE wykorzystane są różne protokoły warstwy fizycznej, np. szybki interfejs szeregowy HSSI (ang. High-Speed Serial Interface) i V.35. Protokoły te określają kody i parametry elektryczne używane w komunikacji między urządzeniami.
+
+<h3>Karta sieciowa</h3>
+ <p style="font-size:17px"><p style="text-align: justify">Każdy komputer, który ma pracować w sieci, musi mieć zainstalowany adapter umożliwiający fizyczne przyłączenie okablowania sieciowego lub odbiór danych radiowych. Najczęściej przyjmuje on postać karty rozszerzeń montowanej w gnieździe magistrali PCI, PCI-Express lub też zewnętrznego adaptera USB. Każda karta sieciowa posiada unikatowy adres sprzętowy MAC wykorzystywany do identyfikowania komputera w sieci. Adres MAC składa się z 48 bitów i zapisywany jest szesnastkowo. Pierwsze 24 bity oznaczają producenta, pozostałe 24 są unikatowe dla danego egzemplarza karty.</p>
+<center><img src="f1f.jpg" width="700px" height="200px"></center>
+<p style="font-size:17px"><p style="text-align: justify"><h3>Router</h3>
+<p style="font-size:17px"><p style="text-align: justify">to urządzenie, które służy do łączenia sieci komputerowych, na przykład sieci Internet z domową siecią lokalną. Za pomocą wbudowanych mechanizmów (np. NAT) ruter kieruje ruchem pakietów w sieci - wyznacza dla nich odpowiednią trasę. To właśnie od procesu trasowania (ang. routing) wzięła się nazwa urządzenia.</p>
+<p style="font-size:17px"><p style="text-align: justify">Routery w małych sieciach zwykle posiadają zintegrowany przełącznik (switch), punkt dostępowy Wi-Fi, droższe modele mogą też być wyposażone w bramkę VoIP, pełnić funkcję Wi-Fi ekspandera, mostu, serwera plików, serwera drukarek.</p>
+<center><img src=juk.png" width="700px" height="200px"></center>
+</br>
+<h3>Hub</h3>
+<p style="font-size:17px"><p style="text-align: justify">Dziś już nie stosowane urządzenie sieciowe służące do realizacji połączeń między komputerami w sieciach Ethernet opartych na topologii gwiazdy. Pośrednicząc w połączeniu, rozsyła zapytania do wszystkich komputerów uruchomionych w sieci. Dane trafiają do każdego aktywnego węzła, jednak odpowiada tylko ta maszyna, dla której przeznaczone są dane pakiety, pozostałe ignorują cudze pakiety.
+<p style="font-size:17px"><p style="text-align: justify">W sieciach z koncentratorem dochodzi do nadmiarowej transmisji danych, co sprzyja powstawaniu kolizji, czyli sytuacji w której dwa komputery w tym samym czasie usiłują wysłać pakiet przez łącze. Rozsyłanie danych do wszystkich komputerów w sieci nie sprzyja również bezpieczeństwu - komputer wyposażony w odpowiednio skonfigurowaną kartę sieciową może przechwytywać wszystkie dane przesyłane w danej sieci</p>
+<center><img src="hub.png"width="700px" height="200px"></center>
+<h3>Switch</h3>
+<p style="font-size:17px"><p style="text-align: justify">Urządzenie centralne służące do realizacji połączeń między komputerami w sieciach Ethernet opartych na topologii gwiazdy. Przełącznik przechowuje w wewnętrznej pamięci numery MAC interfejsów sieciowych, które są skojarzone z portami RJ-45 do których podłączone są komputery. Dzięki sprawdzeniu adresu każdej ramki danych switch przesyła pakiety tylko do właściwego komputera.
+<p style="font-size:17px"><p style="text-align: justify">Bezpośrednie połączenie między komputerem nadającym pakiety oraz odbierającym je pozwala w pełni wykorzystać przepustowość sieci.</p>
+<center><img src="switch.png" width="700px" height="200px"></center>
+
+<h3>Punkt dostępowy - access point</h3>
+<p style="font-size:17px"><p style="text-align: justify"> Urządzenie zapewniające bezprzewodowy dostęp do zasobów sieci za pomocą WiFi.</br>
+<center><img src="img/pktdostepowy.jpg" alt="ACCESS POINT"></center>
+
+<h3>Most- bridge</h3>
+<p style="font-size:17px"><p style="text-align: justify"> Działa w sposób odwrotny do punktu dostępowego - dzięki niemu sygnał sieci bezprzewodowej możemy zamienić na połączenie kablowe (bo jest potrzebne np. do telewizora z DLNA czy konsoli).</br>
+<center><img src="img/mostsiec.jpg" alt="MOST" width="300px" height="300px"></center>
+
+<h3>Ekspander zasięgu Wi-Fi (repeater Wi-Fi)</h3>
+<p style="font-size:17px"><p style="text-align: justify">Wzmacniacz sygnału Wi-Fi, który jest tłumiony przez ściany działowe i stropy budynku. Ekspander to specjalny punkt dostępowy zamontowany w miejscu, gdzie macierzysta sieć Wi-Fi jeszcze jest dostępna. Stworzona za pomocą ekspandera sieć jest bliźniacza do już istniejącej, czyli obowiązują w niej te same nazwy, ustawienia i zabezpieczenia.</br>
+<center><img src="img/wifirepeater.jpg" alt="WIFI REPEATER" width="300px" height="300px"></center>
+
+<h3>Serwer wydruku</h3>
+<p style="font-size:17px"><p style="text-align: justify">Jest to serwer, który - jak to mówimy - udostępnia usługę drukowania. Pod tym pojęciem rozumiemy oczywiście samo drukowanie, ale nie tylko - serwer potrafi kolejkować przychodzące do wydruku pliki, formatować odpowiednio ich wygląd, jak również prowadzi statystyki i raporty na temat przetwarzanych plików. Serwer wydruku może samodzielnym urządzeniem, pośrednikiem pomiędzy drukarką a komputerami klienckimi (wówczas drukarka nie musi być podłączona do jednego, wybranego komputera).</br>
+<center><img src="img/serwerwydruku.jpg" alt="SERWER WYDRUKU" width="350px" height="200px"></center>
+
+<h3>Kamera IP</h3>
+<p style="font-size:17px"><p style="text-align: justify">urządzenie sieciowe najczęściej wykorzystywane w systemach monitoringu, łączące funkcje kamery i komputera. Urządzenie posiada przypisany adres IP i jest podłączone do sieci. Dzięki temu może pełnić rolę serwera lub klienta FTP, może też wysyłać maile, zarządzać alarmami, wysyłać logi na stronę www etc. Kamera IP nie potrzebuje komputera do działania, tak jak wymaga tego zwykła kamera internetowa.</br>
+<center><img src="img/kameraip.jpg" alt="KAMERA IP" width="350px" height="250px"></center>
+
+<h3>Bramka VoIP</h3>
+<p style="font-size:17px"><p style="text-align: justify">urządzenie sieciowe, które służy do wykonywania połączeń tradycyjnym aparatem telefonicznym (podłączanym złączem RJ-11) za pośrednictwem internetu, a dokładniej mówiąc protokołu VoIP (Voice over Internet Protocol).</br>
+<center><img src="img/bramka-voip.jpg" alt="BRAMKA VOIP" width="350px" height="250px"></center></br>
+
+<h3>Adaptery PowerLine</h3>
+<p style="font-size:17px"><p style="text-align: justify">pozwalają przesyłać sygnał sieci poprzez istniejącą np. w mieszkaniu instalację elektryczną. Potrzebne są dwa adaptery, najlepiej w standardzie HomePlug AV.
+Wystarczy jeden adapter podłączyć do gniazdka w pobliżu rutera, a drugi - obok urządzenia z portem RJ-45. Następnie skrętką podłączamy urządzenia do adapterów. Teoretycznie standard HomePlug AV pozwala na przesyłanie danych z prędkością do 200 Mb/s. W praktyce będzie to do 100 Mb/s. Na szybkość transmisji ma wpływ: jakość instalacji elektrycznej, długość przewodów, obciążenie prądowe instalacji elektrycznej. Za pomocą tej technologii nie udostępnimy łącza internetowego np. sąsiadowi - licznik energii elektrycznej jest dla przesyłanych danych zaporą nie do pokonania.</br>
+</br>
+<center><img src="img/powerline.jpg" alt="ADAPTERY POWERLINE" width="350px" height="250px"></center>
+
+<h3>Telefon IP</h3>
+<p style="font-size:17px"><p style="text-align: justify">Urządzenie sieciowe, które służy do wykonywania połączeń za pośrednictwem internetu, a dokładniej mówiąc protokołu VoIP. Do podłączenia telefonu IP, zamiast tradycyjnego portu RJ-11 używamy ethernetu (RJ-45), wpinając telefon bezpośrednio w sieć. Telefon IP to autonomiczne urządzenie - aby prowadzić rozmowę, telefon IP nie musi być podłączony do komputera. Komputer jest potrzebny jedynie do skonfigurowania telefonu (podobnie jak to bywa z routerami).</br>
+<center><img src="img/voiptel.jpg" alt="TELEFON IP"></center>
+
+<a href="https://miroslawzelent.pl/informatyka/urzadzenia-sieciowe/">Źródła</a>
+
+
+
+</body>
+</br>
+
+</div>
+
+</body>
+</html>
