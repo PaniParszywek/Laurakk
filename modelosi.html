@@ -5,7 +5,7 @@
  <meta charset="utf-8">
 <body bgcolor="#8e6569">
 <head>
-<title>ADRESOWANIE IP</title>
+<title>MODEL OSI</title>
 <style>
 .center {
   margin: auto;
@@ -23,98 +23,9 @@ a:link {color: PINK;}
 </head>
 <body>
 <div class="center">
-  <center><h1>ADRESOWANIE IP</h1></center>
-  <center><p style="font-size:17px"><p style="text-align: justify">Początkowo schemat adresacji IP zakładał sztywny podział na klasy. Klasa A umożliwia zaadresowanie 16 milionów unikalnych hostów, klasa B obejmuj 65 tysięcy adresów, natomiast najmniejsza klasa C umożliwia stworzenie sieci składającej się z 254 hostów.
-Adresy sieci klasy A są już niedostępne, organizacja InterNIC zaprzestała też przydzielania adresów sieci klasy B. Najwięcej jest adresów sieci klasy C, jednak ich wadą jest stosunkowo mała liczba adresów dostępnych w ramach pojedynczej sieci klasy C.
-Adres IPv4 składa się z 32 bitów podzielonych na dwie części: pierwsza identyfikuje sieć, natomiast druga konkretne urządzenie w danej sieci. Pierwsza część adresu określa jednocześnie klasę adresową, co wyjaśnia poniższa tabela.</p>
- <img src ="adip.png" alt="tabela podziału adresów klas">
-</br>
-<center><p style="font-size:17px"><p style="text-align: justify">Jak pokazuje powyższa tabela, dopóki nie wprowadzono rozwiązania CIDR (Classless Inter-Domain Routing), sam adres IP wystarczał, aby określić na potrzeby routingu jego przynależność do podsieci.</p>
-</br>
-<h3>Adresy klasy A</h3>
-<center><p style="font-size:17px"><p style="text-align: justify">32-bitowe adresy IP zapisuje się najczęściej jako cztery liczby oddzielone kropkami – każda odpowiada jednemu bajtowi adresu. 
-Dlatego adresy klasy A będą należeć do przedziału od 1.0.0.0 do 126.0.0.0 (adresy 0.x.x.x i 127.x.x.x są zarezerwowane). Liczba urządzeń, które można zaadresować w pojedynczej sieci klasy A wynosi dokładnie 16 777 214 (adresy x.0.0.0 i x.255.255.255 są zarezerwowane). W praktyce nikt nie podłącza 16 milionów urządzeń do jednej sieci. Administratorzy tak dużych sieci dzielą je na mniejsze sieci, zwane podsieciami. W ramach każdej sieci klasy A można utworzyć 65 534 podsieci (numery sieci 0.0 oraz 255.255 są zarezerwowane), z których każda może liczyć 254 urządzenia (adresy urządzeń 0 i 255 są zarezerwowane).
-Uzyskuje się to poprzez podzielenie części adresu IP wskazującej na urządzenie (jest to druga, 24-bitowa część adresu IP klasy A) na 16 bitów adresu podsieci oraz 8 bitów służących do adresowania urządzeń.</p>
-</br>
-<h3>Adres klasy B</h3>
-<center><p style="font-size:17px"><p style="text-align: justify">Dwa pierwsze bity adresu klasy B to 1 i 0, a następne 14 bitów identyfikuje sieć. Ostatnie 16 bitów służy do adresowanie urządzeń końcowych.
-Dlatego adresy sieci klasy B należą do przedziału od 128.1.0.0 do 191.254.0.0, a każda z tych sieci oferuje 65 534 adresy IP dla urządzeń końcowych. Podobnie jak w przypadku adresów klasy A, również część adresu klasy B służącą do adresowania urządzeń końcowych można podzielić na dwie części: </p>
-<center><p style="font-size:17px"><p style="text-align: justify"><p style="line-height: 0cm; "> - adres podsieci
-<center><p style="font-size:17px"><p style="text-align: justify"><p style="line-height: 0,1cm; "> - adres urządzenia końcowego</p>
-<center><p style="font-size:17px"><p style="text-align: justify">Przykładowo, adres klasy B można podzielić na 8 bitów adresu podsieci i 8 bitów adresu urządzenia końcowego.
-Taki sposób podziału adresu klasy B pozwala na stworzenie 254 podsieci, z których każda może składać się z 254 urządzeń.</p>
-</br>
-<h3>Pozostałe klasy adresów</h3>
-<center><p style="font-size:17px"><p style="text-align: justify">Trzy pierwsze bity adresu klasy C to 1, 1 i 0, natomiast kolejne 21 bitów identyfikuje sieć. Ostatnie 8 bitów adresów służy do identyfikacji urządzeń końcowych. Adresy sieci klasy C należą do przedziału od 192.0.1.0 do 223.255.254.0, a w każdej sieci może być do 254 urządzeń.
-Na koniec, są jeszcze klasy adresów D i E. Klasa D zaczyna się od 224.0.0.0, a adresy należące do tej klasy służą do transmisji typu multicast. Adresy klasy E zaczynają się od 240.0.0.0 i obecnie są wykorzystywane tylko do celów eksperymentalnych.</p>
-</br>
-</br>
-<h2>Maska Podsieci</h2>
-<center><p style="font-size:17px"><p style="text-align: justify">Zanim przejdziemy do omówienia maski, musimy jeszcze określić typy adresów, które związane są z każdą siecią, są nimi:
-<p><b>adres sieciowy (ang. network address)</b> -adres, który określa całą sieć,
-<p><b>adres rozgłoszeniowy (ang. broadcast address)</b> – specjalny adres używany w celu wysyłania danych do wszystkich hostów w określonej sieci,
-<p><b>adres hosta (interfejsu urządzenia końcowego)</b> – adres przyporządkowany urządzeniu końcowemu pracującemu w sieci.
-<center><p style="font-size:17px"><p style="text-align: justify">Maska podsieci służy do określenia, która część adresu IP jest adresem sieci i podsieci, a która część adresem urządzenia końcowego. W efekcie adres IP jest dzielony na trzy część: adres sieci, adres podsieci oraz adres urządzenia.
-Maska podsieci to 32-bitowy ciąg, który składa się z ciągu jedynek (wskazują na część adresu IP będącą adresem sieci i podsieci) i następującego po nim ciągu zer (zera wskazują, że ta część adresu jest adresem urządzenia końcowego). Często zapisuje się maskę podsieci w ten sam sposób, co adresy IP.
-Najlepiej wyjaśnić to na przykładzie. Bardzo popularna maska podsieci w zapisie binarnym to:
-<center><p style="font-size:17px"><strong>11111111 11111111 11111111 00000000</strong></p>
-<p style="font-size:17px">Co w bardziej czytelnej formie zapisuje się jako:</p>
-<p style="font-size:17px"><strong>255.255.255.0</p></strong>
-<p style="font-size:17px"><p style="text-align: justify">Trzeba jednak podkreślić, że maska podsieci nie jest adresem IP, choć funkcjonuje tylko w powiązaniu z adresami IP. Poprawna maska podsieci musi zaczynać się od bitu o wartości „1”, a kończyć się bitem o wartości „0”.</p>
-<img src="elemele.png" alt="Maski podsieci"></br>
-</br>
-<p style="font-size:17px"><p style="text-align: justify">Tabela z maskami podsieci i ich binarnymi skrótami:</p>
-<img src=img/podsieci-m.gif" alt="MASKI PODSIECI"></br>
-</br>
-<h2>Adresy ipv6</h2>
-<p style="font-size:17px"><p style="text-align: justify">W protokole IPv6 adres zapisany jest w 128-bitowej liczbie i może identyfikować jeden bądź wiele interfejsów. W przypadku tego protokołu adres jest bardziej przejrzysty niż adres w poprzedniej wersji protokołu. W przeciwieństwie do poprzedniej wersji protokołu, zakres adresu, czyli obszar jego widoczności, jest ograniczony przez odpowiedni prefiks.
-Adres zazwyczaj zapisuje się jako osiem 16-bitowych bloków zapisanych w systemie szesnastkowym oddzielonych dwukropkiem. Dozwolone jest pomijanie początkowych zer w bloku, a także pominięcie jednego ciągu bloków składających się wyłącznie z zer. Pominięte bloki zer oznacza się podwójnym separatorem bloków (dwukropek). Dopuszczalny jest tylko jeden podwójny dwukropek "::" w adresie.</p>
-<h3>Zakresy adresów</h3>
-<p style="font-size:17px"><p style="text-align: justify">Charakterystyczną cechą protokołu jest fakt, że zostały zdefiniowane zakresy adresów. W przypadku adresów unicastowych wyróżniane są następujące zakresy:
-<center><p style="font-size:17px"><p style="line-height: 0,1cm; "><p style="text-align: justify"><b>adresy lokalne dla łącza (link-local address)</b> – są to adresy wykorzystywane tylko do komunikacji w jednym segmencie sieci lokalnej lub przy połączeniu typu point-to-point. Routery nie przekazują pakietów z tego rodzaju adresem. Z puli pozostałych adresów wyróżniane są przez prefiks FE80::/10. Każdy interfejs musi mieć przydzielony co najmniej jeden adres lokalny dla łącza, nawet jeżeli posiada adres globalny lub unikatowy adres lokalny.
-<center><p style="font-size:17px"><p style="line-height: 0,1cm; "><p style="text-align: justify"><b>unikatowe adresy lokalne (unique local address)</b> – są to adresy będące odpowiednikami adresów prywatnych wykorzystywanych w protokole IPv4. Z puli pozostałych adresów wyróżniane są przez prefiks FC00::/7. Od adresów lokalnych łącza odróżnia je także prefiks routingu.
-<center><p style="font-size:17px"><p style="line-height: 0,1cm; "><p style="text-align: justify"><b>adresy globalne (global unicast address)</b> – widoczne w całym internecie, są odpowiednikami adresów publicznych stosowanych w IPv4; do adresów tego typu należą adresy nie wymienione w pozostałych punktach.
-Przez pewien czas, protokół definiował adresy site-local address, identyfikowane przez prefiks FEC0/10, jednak, ze względu na wiele kontrowersji zostały uznane za przestarzałe.</p>
-<img src="img/ipv6.png" alt="adresowanie ipv6">
-</br>
-
-</br>
-<h2>ADRESOWANIE IPV4</h2>
-<center><p style="font-size:17px"><p style="text-align: justify">Jednym z kluczowych zadań warstwy sieci jest adresowanie. Adresowanie w sieciach IP jest bardzo podobne do adresowania stosowanego przez nas, ludzi. Oczywiście tylko na poziomie logicznym, mechanizmy adresowania są różne. Hosty w sieciach zostały pogrupowane w celu łatwiejszego nimi zarządzania i adresowania.</p>
-<img src ="img/grupowanie-hostow.jpg" alt=GRUPOWANIE HOSTÓW" height="250px" width="550px"></br>
-<center><p style="font-size:17px"><p style="text-align: justify">Podobnie jak u ludzi, też mieszkamy w miastach, na konkretnych ulicach. Dzięki temu wspomniana wcześniej paczka od cioci z Ameryki łatwo mogła dotrzeć do odbiorcy. Najpierw została wysłana promem do Polski, potem ciężarówką do Twojego miasta, następnie mniejszym autem pod wskazaną ulicę i numer domu. Bardzo podobnie jest z adresowanie hostów. Pakiet przesyłany pomiędzy sieciami, najpierw trafia do sieci, do której przynależy host, a potem przesyłany jest już do konkretnego hosta. Ten typ adresowania nazywany jest adresowaniem hierarchicznym, bo najpierw doczytywane są informacje ogólne, czyli w przypadku przesyłania danych adres sieci, potem dopiero te szczegółowe, czyli adres IP konkretnego hosta.
-</br>
-<center><img src="img/adresowanie-hierarchiczne.jpg" alt="ADRESOWANIE HIERARCHICZNE" height="250px" width="550px>
-<center><p style="font-size:17px"><p style="text-align: justify">W sieciach komputerowych hosty mogą się ze sobą komunikować na trzy sposoby:
-<p>z wykorzystaniem transmisji pojedynczej (ang. Unicast);
-<p>poprzez rozsyłanie grupowe (ang. Multicast);
-<p>poprzez rozgłaszanie (ang. Broadcast);</br>
-</br>
-<p style="font-size:17px"><p style="text-align: justify">Transmisja typu <b>unicast</b> stosowana jest najczęściej, wykorzystywana jest w typowych połączeniach pomiędzy dwoma hostami. Przykładowo, kiedy klient wysyła żądanie do serwera, wykorzystuje do tego właśnie transmisje unicast.
-</br>
-<center><img src ="img/unicast.jpg" alt=UNICAST" height="200px" witdh="250px"></br>
-</br><p style="font-size:17px"><p style="text-align: justify">Zastosowanie transmisji grupowej, czyli <b>multicast</b> w znacznym stopniu pozwala zredukować zużycie pasma w sieci ponieważ nie wysyła się pojedynczych pakietów do wielu hostów, tak jak byłoby to realizowane z użyciem transmisji pojedynczej, lecz wysyła się jeden pakiet, który trafić może do wielu odbiorców jednocześnie.
-</br>
-<center><img src="img/multicast.jpg" alt="MULTICAST" width="500px" height="250px">
-</br><p style="font-size:17px"><p style="text-align: justify"><b>Broadcast,</b> czyli rozgłaszanie, polega z kolei na wysyłaniu pakietów do wszystkich hostów w danej sieci. Wykorzystywany jest do tego specjalny adres, adres rozgłoszeniowy, więc nie jest tak, że w pakiecie IP zapisane są adresy wszystkich hostów w sieci. Byłoby to technicznie nie możliwe, to raz, a dwa transmisję rozgłoszeniową stosuję się na przykład wówczas, kiedy nieznany jest adres konkretnego urządzania. Ten rodzaj transmisji wykorzystywany jest najczęściej w sieciach lokalnych, rzadko zdarza się, że rozgłaszanie stosuje się do komunikacji z hostami spoza danej sieci lokalnej.</br>
-<center><img src="img/broadcast.jpg" alt="BROADCAST" width="500px" height="250px">
-</br><p style="font-size:17px"><p style="text-align: justify">W całej puli adresów IPv4 wyodrębniono grupy adresów, tzw. specjalnego zastosowania. Są to adresy, które niestosowane są do komunikacji w sieciach rozległych. Wśród tych adresów specjalnych znajdują się adresy, tak zwanych pętli zwrotnych (ang. loopback). Adres pętli zwrotnej to nic innego jak adres samego siebie, każdy komputer w sieci, oprócz właściwego adresu IP wykorzystywanego do komunikacji, ma przypisany również adres samego siebie, najczęściej jest to adres 127.0.0.1. Ponadto, każdy adres z puli służy do testowania poprawności konfiguracji protokołu IPv4 na hoście.
-</br><p style="font-size:17px"><p style="text-align: justify">Innym rodzajem adresów specjalnych, są adresy łącza lokalnego, (ang. Link-local). Tego typu adresy stosuje się wówczas, kiedy host powinien uzyskać adres IP z serwera DHCP, ale ten z jakiś powodów jest niedostępny. Host wówczas przyjmie adres właśnie z puli adresów łącza lokalnego. Transmisja danych z wykorzystaniem takich adresów może odbywać się tylko w obrębie sieci lokalnej, w której pracuje danych host. No i jeszcze jedna, ostatnia już grupa adresów specjalnych, czyli adresy typu TEST-NET. Podobnie jak adresy lokalnego łącza służą one do komunikacji tylko w obszarze sieci lokalnej, stosowane są w celach edukacyjnych. Mogą być wykorzystywane w dokumentacji czy też w przykładach, np. podczas zajęć z sieci. Nie powinny natomiast być używane na stałe.</br>
-</br>
-</br><h2>Obliczanie adresów ipv4</h2>
-<img src="img/obl1.png" alt="OBLICZANIE ADRESU"></br>
-<img src="img/obl2.png" alt="OBLICZANIE ADRESU" width="587px" height="450px"></br>
-<img src="img/obl3.png" alt="OBLICZANIE ADRESU" width="587px" height="450px"></br>
-
-
-
-
-
-
-<a href="https://egzamin-e13.pl/projektowanie-lokalnych-sieci-komputerowych-2/adresacja-ip/">źródło - obliczanie adresów</a></br>
-<a href="https://pasja-informatyki.pl/sieci-komputerowe/adresowanie-ipv4/">Żródło - Adresowanie IPv4</a></br>
-<a href ="https://pl.wikipedia.org/wiki/IPv6">Żródło - Adresowanie IPv6</a></br>
-<a href ="http://itfocus.pl/dzial-it/sieci/adresowanie-ip-maski-podsieci/">Żródło - maski podsieci</a>
+  <center><h1>MODEL OSI</h1></center>
+	<center><p style="font-size:17px"><p style="text-align: justify">MODEL OSI</p>
+	  <img src="img/modelosi1.png" alt="model osi">
 
 </div>
 
