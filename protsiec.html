@@ -28,7 +28,7 @@ a:link {color: PINK;}
 W celu komunikacji między różnymi protokołami wykorzystuje łącza (ang. gateway) - czyli urządzenia, które tłumaczącą rozkazy jednego protokołu na drugi. Należy pamiętać, że używanie łącz może spowolnić w znacznym stopniu komunikację pomiędzy systemami. Kolejnym rozwiązaniem może być skonfigurowanie komputerów w taki sposób, by wykorzystywały kilka protokołów równocześnie, jednak i to rozwiązanie może prowadzić do dodatkowego obciążania sieci.</p>
 <p>Do najważniejszych protokołów sieciowych należą:
 <p>TCP/IP
-<p>IP
+<p>UDP
 <p>SLIP
 <p>PPP
 	  <p style="text-align: justify"><b>TCP/IP</b> (ang. Transmission Control Protocol / Internet Protocol) - to zespół protokołów sieciowych używany w sieci Internet. Najczęściej wykorzystują go systemy Unixowe oraz systemy Windows, choć można stosować go również w systemach Novell NetWare. Zadanie protokołu TCP/IP polega na dzieleniu danych na pakiety odpowiedniej wielkości, ponumerowaniu ich w taki sposób, aby odbiorca mógł sprawdzić, czy dotarły wszystkie pakiety oraz ustawieniu ich we właściwej kolejności. Kolejne partie informacji wkładane są do kopert TCP, a te z kolei umieszczane są w kopertach IP. Oprogramowanie TCP po stronie odbiorcy zbiera wszystkie nadesłane koperty, odczytując przesłane dane. Jeśli brakuje którejś koperty, wysyła żądanie ponownego jej dostarczenia. Pakiety wysyłane są przez komputery bez uprzedniego sprawdzenia, czy możliwa jest ich transmisja. Może się zdarzyć taka sytuacja, że do danego węzła sieci, gdzie znajduje się router, napływa więcej pakietów, aniżeli urządzenie może przyjąć, posegregować i przesłać dalej. Każdy router posiada bufor, który gromadzi pakiety czekające na wysłanie. Gdy bufor ulegnie całkowitemu zapełnieniu, nowo nadchodzące pakiety zostaną odrzucone i bezpowrotnie przepadną. Protokół, który obsługuje kompletowanie pakietów zażąda więc wtedy ponownego ich wysłania.
@@ -38,8 +38,43 @@ W celu komunikacji między różnymi protokołami wykorzystuje łącza (ang. gat
 	  </br>
 	  <p>odbieranie wiadomości tcp/pi</p>
 	  <img src="img/tcpip3.png" alt="odpieranie wiad" height="400" width="600">
+	<p style="text-align: justify"><b>SLIP</b> (ang. Serial Line Internet Protocol) – protokół używany dawniej przy połączeniach modemowych (połączenie wdzwaniane, ang. dial-up). Obecnie niemal całkowicie zastąpiony przez nowszy i bardziej elastyczny protokół PPP. Działanie protokołu sprowadza się do definicji sposobu ramkowania danych. Nie istnieje wykrywanie ani naprawa błędów. Jedynym jego celem jest wysyłanie pakietów na łącze szeregowe.
+
+Protokół SLIP obsługuje wyłącznie transmisje datagramów protokołu IP (maksymalna długość 1006 bajtów), kapsułkowanych w swoich ramkach. Transmisja ta może się odbywać zarówno w łączach synchronicznych jak i asynchronicznych.</p>
+
+		<p><b>CSLIP </b>(ang. Compressed SLIP) to wersja protokołu SLIP, która kompresuje dane przed transmisją.</p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <a href="http://www.crypto-it.net/pl/teoria/protokoly-tcp-ip.html">Źródło</a>
 <a href="https://www.bryk.pl/wypracowania/pozostale/informatyka/15947-protokoly-sieciowe.html">Źródło</a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </div>
 
 </body>
