@@ -43,7 +43,7 @@ Drugim popularnym protokołem używanym w warstwie transportowej jest UDP (ang. 
 Dzięki swojej prostocie UDP jest szybsze niż TCP. Z drugiej jednak strony, nie zapewnia takiej niezawodności działania jak TCP. Przede wszystkim UDP nie gwarantuje, że wiadomości rzeczywiście dotarły do odbiorcy. UDP nie dostarcza pakietów w takiej samej kolejności, w jakiej zostały one wysłane. Ciężar uporządkowania otrzymywanych wiadomości i sprawdzenia czy nie nastąpiły błędy transmisji spoczywa na otrzymującej je aplikacji.</p>
 	<p style="text-align: justify"><b>Nagłówek UPD</b>
 Nagłówek UPD składa się z 8 bajtów, jest więc znacznie krótszy niż odpowiadający mu nagłówek TCP.</p>
-	<img src="img/udp1.png" alt="wysyłanie wiadomości w tcp/ip" height="400" width="600">
+	<img src="img/udp1.png" alt="wysyłanie wiadomości w tcp/ip" height="200" width="600">
 	</br>
 	<p style="text-align: justify"><b>SLIP</b> (ang. Serial Line Internet Protocol) – protokół używany dawniej przy połączeniach modemowych (połączenie wdzwaniane, ang. dial-up). Obecnie niemal całkowicie zastąpiony przez nowszy i bardziej elastyczny protokół PPP. Działanie protokołu sprowadza się do definicji sposobu ramkowania danych. Nie istnieje wykrywanie ani naprawa błędów. Jedynym jego celem jest wysyłanie pakietów na łącze szeregowe.
 Protokół SLIP obsługuje wyłącznie transmisje datagramów protokołu IP (maksymalna długość 1006 bajtów), kapsułkowanych w swoich ramkach. Transmisja ta może się odbywać zarówno w łączach synchronicznych jak i asynchronicznych.</p>
