@@ -46,7 +46,15 @@ pojedyncza ramka otrzymuje Tag, który
 określa przynależność ramki do VLANu. Gdy oba switche wspierają tagowanie
 to do podłączenia konieczny jest tylko
 		jeden kabel.</p>
-	
+	<h2>Trunking</h2>
+	<p>połączenie typu trunk (802.1Q, dot1q) jest to połączenie pomiędzy switchami, bądź switchami i routerami. Pozwala na przenoszenie całego ruchu VLANowego za pomocą jednego łącza. Trudno sobie wyobrazić co by się działo gdyby dla każdego VLANu trzeba było posiadać oddzielne łącze lub kabel. Na urządzeniach sieciowych bardzo szybko zabrakłoby wolnych portów do komunikowania się między sobą. Ramki przesyłane za pomocą trunków są otagowane, dzięki czemu switche są w stanie określić do jakiego VLANu należą. Tagowanie następuje w momencie, gdy switch próbuje przesłać ramkę przez port typu trunk. Gdy na porcie trunk pojawia się ramka nieotagowana zostają ona przesyłana za pomocą natywnego VLANu.</p>
+	</br>
+	<p>Standardy trunków:
+<p>IEEE 802.1q (nazywany też dot1q) to standard określający format ramki tagowanej, gdzie nagłówek z tagiem wstawiany jest do środka ramki po adresie źródłowym
+<p>ISL – historyczny standard opracowany przez Cisco. Obecnie praktycznie nie używany (nawet przez Cisco)
+<p>Po dwóch stronach łącza musi być ten sam standard trunk.
+
+<p>Porty na switchu można skonfigurować na dwa sposoby. Może być typ access lub trunk</p>
 	</br>
 
 
